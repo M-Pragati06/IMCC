@@ -221,7 +221,8 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
-  -webkit-appearance: button; }
+  -webkit-appearance: button; 
+appearance: none;}
 
 button:not(:disabled),
 [type="button"]:not(:disabled),
@@ -246,7 +247,8 @@ input[type="date"],
 input[type="time"],
 input[type="datetime-local"],
 input[type="month"] {
-  -webkit-appearance: listbox; }
+  -webkit-appearance: listbox; 
+appearance: none;}
 
 textarea {
   overflow: auto;
@@ -278,7 +280,8 @@ progress {
 
 [type="search"] {
   outline-offset: -2px;
-  -webkit-appearance: none; }
+  -webkit-appearance: none;
+appearance: none; }
 
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
@@ -9364,6 +9367,7 @@ textarea.form-control {
 .mfp-with-zoom.mfp-bg {
   opacity: 0;
   -webkit-backface-visibility: hidden;
+  backface-visibility: none;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
@@ -9940,7 +9944,7 @@ textarea.form-control {
     background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
     border-radius: 50px;
     border: none;
-    box-shadow: 0 8px 20px rgba(103, 78, 235, 0.3);
+    box-shadow: 0 8px 20px rgba(103, 78, 235, 0.7);
     position: relative;
     overflow: hidden;
     cursor: pointer;
@@ -9965,7 +9969,7 @@ textarea.form-control {
   
   .animated-button:hover {
     transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 12px 25px rgba(103, 78, 235, 0.4);
+    box-shadow: 0 12px 25px rgba(103, 78, 235, 0.7);
     color: #fff;
   }
   
@@ -9975,7 +9979,7 @@ textarea.form-control {
   
   .animated-button:active {
     transform: translateY(2px) scale(0.98);
-    box-shadow: 0 4px 15px rgba(103, 78, 235, 0.3);
+    box-shadow: 0 4px 15px rgba(103, 78, 235, 0.6);
   }
   
   .animated-button::after {
@@ -9985,7 +9989,7 @@ textarea.form-control {
     left: 50%;
     width: 5px;
     height: 5px;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.8);
     opacity: 0;
     border-radius: 100%;
     transform: scale(1, 1) translate(-50%);
@@ -9993,8 +9997,102 @@ textarea.form-control {
   }
   
   .animated-button:focus:not(:active)::after {
-    animation: ripple 1s ease-out;
+    animation: ripple 1s ease-in-out;
   }
+
+  
+    /* Custom Styles */
+    .service-tabs .nav-link {
+        padding: 12px 15px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        color: #25282b;
+		font-size: 18px;
+		background-color:rgb(244, 238, 249);
+        border: 1px solid #e9ecef;
+        margin-bottom: 10px;
+		font-weight: 700;
+    }
+    
+    .service-tabs .nav-link:hover {
+        background-color: #f8f9fa;
+		outline: none;
+    }
+
+    .service-items-container h5{
+        font-size: 1rem;
+        color: darkblue;
+    }
+    
+    .service-tabs .nav-link.active {
+        background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);;
+        color: white;
+		outline: none;
+		
+        border-color: #008cff;
+    }
+    
+    .service-tabs .nav-link i {
+        font-size: 18px;
+        width: 24px;
+        text-align: center;
+    }
+    
+    .service-item {
+        transition: all 0.3s ease;
+        border: 1px solid #e9ecef;
+        background-color: white;
+    }
+    
+    .service-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        border-color: #008cff;
+    }
+    
+    .alert-primary-soft {
+        background-color: rgba(0, 140, 255, 0.1);
+        border-left: 4px solid #008cff;
+    }
+    
+    .alert-success-soft {
+        background-color: rgba(40, 167, 69, 0.1);
+        border-left: 4px solid #28a745;
+    }
+    
+    .alert-warning-soft {
+        background-color: rgba(255, 193, 7, 0.1);
+        border-left: 4px solid #ffc107;
+    }
+    
+    .alert-info-soft {
+        background-color: rgba(23, 162, 184, 0.1);
+        border-left: 4px solid #17a2b8;
+    }
+    
+    .divider {
+        background: linear-gradient(to right, #008cff, #00b4ff);
+    }
+    
+    /* Custom scrollbar for service items */
+    .service-items-container::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    .service-items-container::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+    
+    .service-items-container::-webkit-scrollbar-thumb {
+        background: #008cff;
+        border-radius: 10px;
+    }
+    
+    .service-items-container::-webkit-scrollbar-thumb:hover {
+        background: #0069d9;
+    }
+
   
   @keyframes ripple {
     0% {
@@ -10010,7 +10108,7 @@ textarea.form-control {
   /* Pulse animation */
   @keyframes pulse {
     0% {
-      box-shadow: 0 0 0 0 rgba(167, 119, 227, 0.7);
+      box-shadow: 0 0 0 0 rgba(167, 119, 227, 0.8);
     }
     70% {
       box-shadow: 0 0 0 12px rgba(167, 119, 227, 0);
@@ -10021,7 +10119,7 @@ textarea.form-control {
   }
   
   .animated-button.pulse {
-    animation: pulse 2s infinite;
+    animation: pulse 1s infinite;
   }
   
 
